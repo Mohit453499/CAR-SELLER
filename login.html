@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Car Reselling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to Car Reselling Website</h2>
+        <form id="login-form" onsubmit="return handleLogin(event)">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p id="message" style="color: red;"></p> 
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); 
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+          
+            const validUsername = 'CHOUDHARY'; 
+            const validPassword = '12345'; 
+
+           
+            if (username === validUsername && password === validPassword) {
+                
+                window.location.href = 'welcome.html'; 
+            } else {
+               
+                document.getElementById('message').innerText = 'Invalid username or password. Please try again.';
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
